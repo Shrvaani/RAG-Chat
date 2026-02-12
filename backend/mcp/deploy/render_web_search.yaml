@@ -1,0 +1,17 @@
+# Render Deployment Configuration for Web Search MCP Server
+
+services:
+  - type: web
+    name: web-search-mcp
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt && pip install -r ../requirements.txt
+    startCommand: python web_search_server.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: WEB_SEARCH_PROVIDER
+        value: duckduckgo
+      - key: PORT
+        value: 8001

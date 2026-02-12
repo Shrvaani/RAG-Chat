@@ -1,0 +1,40 @@
+# Core Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+pydantic==2.10.0
+pydantic-settings==2.6.0
+
+# LangChain & LangGraph
+langgraph==0.2.55
+langchain==0.3.13
+langchain-community==0.3.13
+langchain-core==0.3.28
+langchain-huggingface==0.1.2
+
+# HuggingFace
+huggingface-hub==0.26.5
+sentence-transformers==3.3.1
+transformers==4.47.1
+
+# Vector Database - Using latest compatible version
+pinecone-client==5.0.1
+
+# Document Processing
+PyPDF2==3.0.1
+pdfplumber==0.11.4
+python-docx==1.1.2
+markdown==3.7
+
+# Search & Ranking
+rank-bm25==0.2.2
+duckduckgo-search==6.3.5  # Free web search
+
+# Utilities
+python-dotenv==1.0.1
+httpx==0.28.1
+aiofiles==24.1.0
+
+# Database
+sqlalchemy==2.0.36
+aiosqlite==0.20.0

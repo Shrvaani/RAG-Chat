@@ -1,0 +1,17 @@
+# Render Deployment Configuration for Document Processing MCP Server
+
+services:
+  - type: web
+    name: doc-processor-mcp
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt && pip install -r ../requirements.txt
+    startCommand: python document_processor_server.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: UPLOAD_DIR
+        value: /tmp/uploads
+      - key: PORT
+        value: 8003

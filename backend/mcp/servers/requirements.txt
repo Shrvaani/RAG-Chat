@@ -1,0 +1,5 @@
+# MCP Servers Requirements
+# Additional dependencies for MCP servers
+
+# HTTP client for MCP communication
+httpx==0.28.1

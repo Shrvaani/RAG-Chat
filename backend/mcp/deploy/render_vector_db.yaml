@@ -1,0 +1,21 @@
+# Render Deployment Configuration for Vector DB MCP Server
+
+services:
+  - type: web
+    name: vector-db-mcp
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt && pip install -r ../requirements.txt
+    startCommand: python vector_db_server.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PINECONE_API_KEY
+        sync: false
+      - key: PINECONE_ENVIRONMENT
+        value: gcp-starter
+      - key: PINECONE_INDEX_NAME
+        value: rag-documents
+      - key: PORT
+        value: 8002

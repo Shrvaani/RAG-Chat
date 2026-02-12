@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced RAG Document Q&A System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🤖 Advanced RAG Q&A System</h1>
+            <p class="subtitle">Multi-Agent Document Intelligence with MCP Integration</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h2>📁 Upload Documents</h2>
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="fileInput" accept=".txt,.md,.pdf" multiple hidden>
+                        <div class="upload-placeholder">
+                            <span class="upload-icon">📄</span>
+                            <p>Click or drag files here</p>
+                            <small>Supports: PDF, TXT, MD</small>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="uploadBtn">
+                        <span class="btn-icon">⬆️</span> Upload Files
+                    </button>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2>💬 Conversations</h2>
+                    <button class="btn btn-secondary" id="newChatBtn">
+                        <span class="btn-icon">➕</span> New Chat
+                    </button>
+                    <div class="conversation-list" id="conversationList">
+                        <!-- Conversations will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2>📊 System Status</h2>
+                    <div class="status-indicator">
+                        <span class="status-dot" id="statusDot"></span>
+                        <span id="statusText">Checking...</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chat Area -->
+            <main class="chat-container">
+                <div class="chat-header">
+                    <h2 id="chatTitle">Welcome to RAG Q&A</h2>
+                    <div class="chat-actions">
+                        <button class="btn-icon-only" id="clearChatBtn" title="Clear Chat">
+                            🗑️
+                        </button>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <div class="welcome-message">
+                        <h3>👋 Welcome!</h3>
+                        <p>Upload documents and start asking questions.</p>
+                        <div class="features">
+                            <div class="feature">
+                                <span class="feature-icon">🔍</span>
+                                <span>Hybrid Search</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🤖</span>
+                                <span>Multi-Agent System</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🌐</span>
+                                <span>Web Search</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">📝</span>
+                                <span>Citations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <textarea 
+                        id="queryInput" 
+                        placeholder="Ask a question about your documents..."
+                        rows="1"
+                    ></textarea>
+                    <button class="btn btn-primary" id="sendBtn">
+                        <span class="btn-icon">🚀</span> Send
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
